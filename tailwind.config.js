@@ -2,10 +2,12 @@ module.exports = {
   purge: [],
   darkMode: 'class',
   theme: {
-    extend: {},
+    fontFamily: {
+      display: ['Besley'],
+    },
   },
   variants: {
     extend: {},
   },
   plugins: [],
-}
+};
