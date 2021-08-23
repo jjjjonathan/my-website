@@ -4,6 +4,7 @@ module.exports = {
   theme: {
     fontFamily: {
       display: ['Besley'],
+      body: ['Lato'],
     },
   },
   variants: {
