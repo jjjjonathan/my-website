@@ -23,23 +23,39 @@
       text-lg
     "
   >
-    <div class="bg-green-400 dark:bg-gray-700 text-right">
+    <div class="bg-green-100 dark:bg-gray-700 text-right">
       <div class="container mx-auto p-4">
         <label for="dark-mode-toggle">Dark Mode?</label>
         <input type="checkbox" id="dark-mode-toggle" />
       </div>
     </div>
-    <div class="rellax sm-circle bg-green-100" data-rellax-speed="-2"></div>
-    <div class="main-container container mx-auto px-4 pt-16">
-      <h1 class="rellax text-6xl sm:text-7xl pb-12 font-display font-bold">
-        Jonathan Horn
-      </h1>
-      <h2
-        class="rellax text-3xl sm:text-4xl pb-16 font-display italic font-bold"
-        data-rellax-speed="-1"
+    <div class="main-container container mx-auto px-4 mt-36">
+      <div
+        class="rellax fit-content bg-yellow-200 mb-12"
+        data-rellax-speed="-3"
+        style="transform: rotate(-1deg)"
       >
-        Web Developer
-      </h2>
+        <h1
+          class="rellax text-6xl sm:text-7xl font-display font-bold p-3"
+          data-rellax-speed="3"
+          style="transform: rotate(1deg)"
+        >
+          Jonathan Horn
+        </h1>
+      </div>
+      <div
+        class="rellax fit-content bg-red-200 mb-16"
+        data-rellax-speed="-2"
+        style="transform: rotate(2deg)"
+      >
+        <h2
+          class="rellax text-3xl sm:text-4xl font-display italic font-bold"
+          data-rellax-speed="2"
+          style="transform: rotate(-2deg)"
+        >
+          Web Developer
+        </h2>
+      </div>
       <p class="pb-12">
         I'm a self-taught web developer focusing on the front end, most
         specifically React.
@@ -52,6 +68,7 @@
         I've gone through both The Odin Project and the Full Stack Open course.
       </p>
       <h3 class="text-4xl sm:text-5xl font-display font-bold">Portfolio</h3>
+      <img src="images/socialize.gif" alt="Preview of socialize project" />
     </div>
   </body>
 </html>
