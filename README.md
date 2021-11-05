@@ -2,4 +2,8 @@
 
 My personal web dev portfolio slash resume slash internet presence.
 
-A work in progress.
+## Technologies
+
+- Tailwind CSS
+- Webpack
+- Good old fashioned HTML
