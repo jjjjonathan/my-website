@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "build": "webpack",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "gh-pages:push": "git subtree push --prefix dist https://github.com/jjjjonathan/jjjjonathan.github.io.git main"
   },
   "author": "jjjjonathan",
   "license": "ISC",
