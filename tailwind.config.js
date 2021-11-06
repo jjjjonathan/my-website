@@ -6,8 +6,8 @@ module.exports = {
   darkMode: 'class',
   theme: {
     fontFamily: {
-      display: ['Besley'],
-      body: ['Lato'],
+      display: ['Besley', 'serif'],
+      body: ['Lato', 'sans-serif'],
     },
   },
   variants: {
