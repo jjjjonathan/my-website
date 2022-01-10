@@ -1,6 +1,10 @@
 import React from 'react';
 import { createGlobalStyle } from 'styled-components';
 
+type Props = {
+  children: React.ReactNode;
+};
+
 const GlobalStyle = createGlobalStyle`
   body {
     margin: 0;
@@ -10,7 +14,7 @@ const GlobalStyle = createGlobalStyle`
   }
 `;
 
-const Layout = ({ children }) => {
+const Layout = ({ children }: Props) => {
   return (
     <>
       <GlobalStyle />
