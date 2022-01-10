@@ -6,6 +6,4 @@ Live at: https://jjjjonathan.github.io
 
 ## Technologies
 
-- Tailwind CSS
-- Webpack
-- Good old fashioned HTML
+- Gatsby
