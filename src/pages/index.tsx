@@ -1,13 +1,15 @@
 import React from 'react';
-import Layout from '../components/layout';
+import Layout from '../components/Layout';
+import View from '../components/View';
 
 const IndexPage = () => {
   return (
     <Layout>
       <main>
-        <title>Jonathan Horn, Web Developer</title>
-        <h1>Jonathan Horn</h1>
-        <h2>Full Stack Web Developer</h2>
+        <View>
+          <h1>Jonathan Horn</h1>
+          <h2>Full Stack Web Developer</h2>
+        </View>
       </main>
     </Layout>
   );
