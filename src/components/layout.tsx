@@ -12,6 +12,7 @@ const Layout = ({ children }: Props) => {
     <ThemeProvider theme={theme}>
       <>
         <Helmet>
+          <title>Jonathan Horn | Full Stack Web Developer</title>
           <link rel="preconnect" href="https://fonts.googleapis.com" />
           <link
             rel="preconnect"
