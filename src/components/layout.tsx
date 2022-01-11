@@ -1,9 +1,19 @@
 import React from 'react';
-import { createGlobalStyle } from 'styled-components';
+import {
+  createGlobalStyle,
+  ThemeProvider,
+  DefaultTheme,
+} from 'styled-components';
 import reset from 'styled-reset';
 
 type Props = {
   children: React.ReactNode;
+};
+
+const theme: DefaultTheme = {
+  colors: {
+    bg: '#f6fffb',
+  },
 };
 
 const GlobalStyle = createGlobalStyle`
@@ -18,19 +28,19 @@ const GlobalStyle = createGlobalStyle`
   }
 
   body {
-    margin: 0;
-    padding: 0;
-    background: teal;
+    background: ${(props) => props.theme.colors.bg};
     font-family: Open-Sans, Helvetica, Sans-Serif;
   }
 `;
 
 const Layout = ({ children }: Props) => {
   return (
-    <>
-      <GlobalStyle />
-      {children}
-    </>
+    <ThemeProvider theme={theme}>
+      <>
+        <GlobalStyle />
+        {children}
+      </>
+    </ThemeProvider>
   );
 };
 
