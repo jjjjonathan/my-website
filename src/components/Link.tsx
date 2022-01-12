@@ -7,8 +7,9 @@ type Props = {
 };
 
 const StyledA = styled.a`
-  font-variant: small-caps;
-  font-weight: 800;
+  font-variant-caps: all-small-caps;
+  font-weight: 600;
+  color: ${(props) => props.theme.colors.black};
 `;
 
 const Link = ({ children, href }: Props) => (
