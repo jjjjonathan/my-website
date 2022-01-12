@@ -2,6 +2,7 @@ import React from 'react';
 import { ThemeProvider } from 'styled-components';
 import { theme, GlobalStyle } from '../styles';
 import { Helmet } from 'react-helmet';
+import Background from './Background';
 
 type Props = {
   children: React.ReactNode;
@@ -25,6 +26,7 @@ const Layout = ({ children }: Props) => {
           />
         </Helmet>
         <GlobalStyle />
+        <Background />
         {children}
       </>
     </ThemeProvider>
