@@ -14,10 +14,9 @@ const GlobalStyle = createGlobalStyle`
   }
 
   body {
-    background: ${(props) => props.theme.colors.bg};
-    color: ${(props) => props.theme.colors.red};
+    background: ${(props) => props.theme.colors.white};
+    color: ${(props) => props.theme.colors.black};
     font-family: 'Jost', sans-serif;
-    font-weight: 800;
     line-height: 1.75;
   }
 
@@ -28,8 +27,8 @@ const GlobalStyle = createGlobalStyle`
   h1, h2, h3, h4, h5 {
     margin: 3rem 0 1.38rem;
     font-family: 'Jost', sans-serif;
-    font-weight: 800;
     line-height: 1.3;
+    font-weight: 800;
   }
 
   h1 {
@@ -39,6 +38,7 @@ const GlobalStyle = createGlobalStyle`
 
   h2 {
     font-size: 5.063rem;
+    color: ${(props) => props.theme.colors.yellow};
   }
 
   h3 {
