@@ -3,8 +3,10 @@ import 'styled-components';
 declare module 'styled-components' {
   export interface DefaultTheme {
     colors: {
-      bg: string;
+      white: string;
+      black: string;
       red: string;
+      yellow: string;
     };
   }
 }
