@@ -6,4 +6,6 @@ Live at: https://jjjjonathan.github.io
 
 ## Technologies
 
+- React
 - Gatsby
+- styled-components
