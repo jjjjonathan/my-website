@@ -34,10 +34,10 @@ module.exports = {
       __key: 'pages',
     },
     {
-      resolve: `gatsby-source-filesystem`,
+      resolve: 'gatsby-source-filesystem',
       options: {
-        name: `md-projects`,
-        path: `./src/content/projects`,
+        name: 'md-projects',
+        path: './src/content/projects',
       },
     },
   ],
