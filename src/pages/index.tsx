@@ -20,9 +20,6 @@ const IndexPage = ({ data }: Props) => {
   const projects = data.projects.nodes;
   const bio = data.bio.nodes[0].html;
 
-  console.log('bio', bio);
-  console.log('projects', projects);
-
   return (
     <Layout>
       <main>
