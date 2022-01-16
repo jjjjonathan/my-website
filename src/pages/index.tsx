@@ -1,5 +1,5 @@
 import React from 'react';
-import { Project } from '../types/project';
+import type { Project, Bio } from '../types/content';
 import Layout from '../components/Layout';
 import View from '../components/View';
 import Link from '../components/Link';
@@ -7,14 +7,21 @@ import { graphql } from 'gatsby';
 
 type Props = {
   data: {
-    allMarkdownRemark: {
+    projects: {
       nodes: Project[];
+    };
+    bio: {
+      nodes: Bio[];
     };
   };
 };
 
 const IndexPage = ({ data }: Props) => {
-  const { nodes } = data.allMarkdownRemark;
+  const projects = data.projects.nodes;
+  const bio = data.bio.nodes[0].html;
+
+  console.log('bio', bio);
+  console.log('projects', projects);
 
   return (
     <Layout>
@@ -24,14 +31,9 @@ const IndexPage = ({ data }: Props) => {
           <h2>Full Stack Web Developer</h2>
         </View>
         <View>
-          <p>
-            I'm a self-taught web developer focusing on the front end, most
-            specifically React. I've been studying web dev and building projects
-            for about a year, and I've coded my way through the curriculum of
-            both The Odin Project and Full Stack Open.
-          </p>
+          <div dangerouslySetInnerHTML={{ __html: bio }}></div>
         </View>
-        {nodes.map(({ frontmatter, html }) => (
+        {projects.map(({ frontmatter, html }) => (
           <View>
             <h3>{frontmatter.title}</h3>
             <Link href={frontmatter.github}>Github</Link>
@@ -45,7 +47,10 @@ const IndexPage = ({ data }: Props) => {
 
 export const pageQuery = graphql`
   {
-    allMarkdownRemark(sort: { fields: frontmatter___index }) {
+    projects: allMarkdownRemark(
+      sort: { fields: frontmatter___index }
+      filter: { fields: { sourceName: { eq: "md-projects" } } }
+    ) {
       nodes {
         frontmatter {
           title
@@ -54,6 +59,11 @@ export const pageQuery = graphql`
           index
           live
         }
+        html
+      }
+    }
+    bio: allMarkdownRemark(filter: { fields: { sourceName: { eq: "bio" } } }) {
+      nodes {
         html
       }
     }

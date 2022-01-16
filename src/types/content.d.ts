@@ -8,3 +8,7 @@ export type Project = {
   };
   html: string;
 };
+
+export type Bio = {
+  html: string;
+};

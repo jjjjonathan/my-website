@@ -1,0 +1,1 @@
+I'm a self-taught web developer focusing on the front end, most specifically React. I've been studying web dev and building projects for about a year, and I've coded my way through the curriculum of both The Odin Project and Full Stack Open.

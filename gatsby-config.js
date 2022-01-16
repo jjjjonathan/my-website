@@ -40,5 +40,12 @@ module.exports = {
         path: './src/content/projects',
       },
     },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'bio',
+        path: './src/content/bio.md',
+      },
+    },
   ],
 };
