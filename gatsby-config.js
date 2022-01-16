@@ -36,7 +36,7 @@ module.exports = {
     {
       resolve: 'gatsby-source-filesystem',
       options: {
-        name: 'md-projects',
+        name: 'projects',
         path: './src/content/projects',
       },
     },

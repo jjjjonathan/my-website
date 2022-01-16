@@ -49,7 +49,7 @@ export const pageQuery = graphql`
   {
     projects: allMarkdownRemark(
       sort: { fields: frontmatter___index }
-      filter: { fields: { sourceName: { eq: "md-projects" } } }
+      filter: { fields: { sourceName: { eq: "projects" } } }
     ) {
       nodes {
         frontmatter {
