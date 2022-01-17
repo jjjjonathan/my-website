@@ -2,7 +2,7 @@ import React from 'react';
 import type { Project, Bio } from '../types/content';
 import Layout from '../components/Layout';
 import View from '../components/View';
-import Link from '../components/Link';
+import ProjectView from '../components/ProjectView';
 import { graphql } from 'gatsby';
 
 type Props = {
@@ -30,12 +30,8 @@ const IndexPage = ({ data }: Props) => {
         <View>
           <div dangerouslySetInnerHTML={{ __html: bio }}></div>
         </View>
-        {projects.map(({ frontmatter, html }) => (
-          <View>
-            <h3>{frontmatter.title}</h3>
-            <Link href={frontmatter.github}>Github</Link>
-            <div dangerouslySetInnerHTML={{ __html: html }} />
-          </View>
+        {projects.map((project) => (
+          <ProjectView project={project} />
         ))}
       </main>
     </Layout>
