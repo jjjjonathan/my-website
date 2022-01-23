@@ -53,8 +53,8 @@ const GlobalStyle = createGlobalStyle`
   h3 {
     font-size: 2rem;
 
-    ${up('md')} {
-      font-size: 3rem;
+    ${up('sm')} {
+      font-size: 2.5rem;
     }
   }
 
