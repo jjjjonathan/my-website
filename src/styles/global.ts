@@ -1,5 +1,6 @@
 import { createGlobalStyle } from 'styled-components';
 import reset from 'styled-reset';
+import { up } from 'styled-breakpoints';
 
 const GlobalStyle = createGlobalStyle`
   ${reset}
@@ -24,7 +25,7 @@ const GlobalStyle = createGlobalStyle`
     margin-bottom: 1rem;
   }
 
-  h1, h2, h3, h4, h5 {
+  h1, h2, h3 {
     margin: 3rem 0 1.38rem;
     font-family: 'Jost', sans-serif;
     line-height: 1.3;
@@ -33,29 +34,34 @@ const GlobalStyle = createGlobalStyle`
 
   h1 {
     margin-top: 0;
-    font-size: 7.594rem;
+    font-size: 5rem;
+
+    ${up('md')} {
+      font-size: 7rem;
+    }
   }
 
   h2 {
-    font-size: 5.063rem;
+    font-size: 3rem;
     color: ${(props) => props.theme.colors.yellow};
+
+    ${up('md')} {
+      font-size: 5rem;
+    }
   }
 
   h3 {
-    font-size: 3.375rem;
-  }
+    font-size: 2rem;
 
-  h4 {
-    font-size: 2.25rem;
-  }
-
-  h5 {
-    font-size: 1.5rem;
+    ${up('md')} {
+      font-size: 3rem;
+    }
   }
 
   small, .text_small {
-    font-size: 0.667rem;
+    font-size: 0.7rem;
   }
+
 `;
 
 export default GlobalStyle;
