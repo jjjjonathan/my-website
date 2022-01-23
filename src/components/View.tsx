@@ -11,22 +11,27 @@ const Container = styled.div`
   padding: 25px;
 `;
 
-const Box = styled.div`
+const Box = styled.div<{ rotation: number }>`
   width: 100%;
   height: 100%;
   padding: 25px;
-  border: 2px solid ${(props) => props.theme.colors.black};
+  border: 5px solid ${({ theme }) => theme.colors.black};
+  transform: rotate(${({ rotation }) => rotation}deg);
   display: flex;
   align-items: center;
   justify-content: center;
 `;
 
-const View = ({ children }: Props) => (
-  <Container>
-    <Box>
-      <div>{children}</div>
-    </Box>
-  </Container>
-);
+const View = ({ children }: Props) => {
+  const rotation = Math.random() * 4 - 2;
+
+  return (
+    <Container>
+      <Box rotation={rotation}>
+        <div>{children}</div>
+      </Box>
+    </Container>
+  );
+};
 
 export default View;
