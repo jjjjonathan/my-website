@@ -31,7 +31,7 @@ const IndexPage = ({ data }: Props) => {
           <div dangerouslySetInnerHTML={{ __html: bio }}></div>
         </View>
         {projects.map((project) => (
-          <ProjectView project={project} />
+          <ProjectView project={project} key={project.frontmatter.index} />
         ))}
       </main>
     </Layout>
