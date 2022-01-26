@@ -6,6 +6,7 @@ const theme: DefaultTheme = {
     black: '#191923',
     red: '#ed254e',
     yellow: '#ffbe0b',
+    offWhite: '#eCe2d0',
   },
 };
 

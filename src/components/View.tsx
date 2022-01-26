@@ -16,10 +16,12 @@ const Box = styled.div<{ rotation: number }>`
   height: 100%;
   padding: 25px;
   border: 5px solid ${({ theme }) => theme.colors.black};
+  background-color: ${({ theme }) => theme.colors.offWhite};
   transform: rotate(${({ rotation }) => rotation}deg);
   display: flex;
   align-items: center;
   justify-content: center;
+  z-index: 1;
 `;
 
 const View = ({ children }: Props) => {
