@@ -5,6 +5,7 @@ import View from '../components/View';
 import ProjectView from '../components/ProjectView';
 import { graphql } from 'gatsby';
 import styled from 'styled-components';
+import LandingView from '../components/LandingView';
 
 type Props = {
   data: {
@@ -18,6 +19,7 @@ type Props = {
 };
 
 const Footer = styled.div`
+  color: ${({ theme }) => theme.colors.dark};
   margin-top: 50px;
   margin-bottom: 50px;
   text-align: center;
@@ -30,10 +32,7 @@ const IndexPage = ({ data }: Props) => {
   return (
     <Layout>
       <main>
-        <View>
-          <h1>Jonathan Horn</h1>
-          <h2>Full Stack Web Developer</h2>
-        </View>
+        <LandingView />
         <View>
           <div dangerouslySetInnerHTML={{ __html: bio }}></div>
         </View>

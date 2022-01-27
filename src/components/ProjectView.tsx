@@ -44,6 +44,10 @@ const Content = styled.div`
   }
 `;
 
+const Title = styled.h3`
+  transform: rotate(${() => Math.random() * 6 - 3}deg);
+`;
+
 const Image = styled.div`
   img {
     width: 300px;
@@ -71,7 +75,7 @@ const ProjectView = ({ project }: Props) => {
     <View>
       <Container>
         <Content>
-          <h3>{title}</h3>
+          <Title>{title}</Title>
           <div dangerouslySetInnerHTML={{ __html: html }} />
           <Link href={github}>Github</Link>
           <Link href={live}>Live Preview</Link>

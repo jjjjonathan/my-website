@@ -15,8 +15,8 @@ const GlobalStyle = createGlobalStyle`
   }
 
   body {
-    background: ${(props) => props.theme.colors.white};
-    color: ${(props) => props.theme.colors.black};
+    background: ${({ theme }) => theme.colors.light};
+    color: ${({ theme }) => theme.colors.light};
     font-family: 'Jost', sans-serif;
     line-height: 1.75;
   }
@@ -34,7 +34,11 @@ const GlobalStyle = createGlobalStyle`
 
   h1 {
     margin-top: 0;
-    font-size: 5rem;
+    font-size: 4rem;
+
+    ${up('sm')} {
+      font-size: 5rem;
+    }
 
     ${up('md')} {
       font-size: 7rem;
@@ -43,7 +47,6 @@ const GlobalStyle = createGlobalStyle`
 
   h2 {
     font-size: 3rem;
-    color: ${(props) => props.theme.colors.yellow};
 
     ${up('md')} {
       font-size: 5rem;
