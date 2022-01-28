@@ -6,6 +6,7 @@ import ProjectView from '../components/ProjectView';
 import { graphql } from 'gatsby';
 import styled from 'styled-components';
 import LandingView from '../components/LandingView';
+import SkillsView from '../components/SkillsView';
 
 type Props = {
   data: {
@@ -39,9 +40,7 @@ const IndexPage = ({ data }: Props) => {
         {projects.map((project) => (
           <ProjectView project={project} key={project.frontmatter.index} />
         ))}
-        <View>
-          <h2>Skills</h2>
-        </View>
+        <SkillsView />
         <View>
           <h2>Resume</h2>
         </View>
