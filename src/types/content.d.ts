@@ -12,3 +12,9 @@ export type Project = {
 export type Bio = {
   html: string;
 };
+
+export type Skill = {
+  name: string;
+  icon: string;
+  id: string;
+};

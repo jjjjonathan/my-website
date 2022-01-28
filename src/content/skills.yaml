@@ -18,11 +18,13 @@
   icon: bootstrap
 - name: Sass
   icon: sass
-- name: styled-components
-  icon: styledcomponents
 - name: MongoDB
   icon: mongodb
 - name: Webpack
   icon: webpack
 - name: Cypress
   icon: cypress
+- name: Gatsby
+  icon: gatsby
+- name: Styled Components
+  icon: styledcomponents

@@ -3,18 +3,35 @@ import styled from 'styled-components';
 import { useStaticQuery, graphql } from 'gatsby';
 import View from './View';
 import simpleIcons from 'simple-icons';
+import type { Skill } from '../types/content';
 
 const SkillsContainer = styled.div`
   display: flex;
+  flex-wrap: wrap;
+  width: 100%;
 `;
 
-const Skill = styled.div`
-  fill: ${({ theme }) => theme.colors.light};
-  width: 30px;
+const SkillBox = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 18vw;
+  margin-bottom: 10px;
+`;
+
+const SkillIconContainer = styled.div`
+  svg {
+    fill: ${({ theme }) => theme.colors.light};
+    width: 12vw;
+    height: 12vw;
+  }
+`;
+
+const DescriptionBox = styled.div`
+  width: 18vw;
 `;
 
 const SkillsView = () => {
-  // TODO type this
   const data = useStaticQuery(graphql`
     {
       allSkillsYaml {
@@ -27,20 +44,21 @@ const SkillsView = () => {
     }
   `);
 
-  const skills = data.allSkillsYaml.nodes;
+  const skills: Skill[] = data.allSkillsYaml.nodes;
 
   return (
     <View>
       <h2>Skills</h2>
       <SkillsContainer>
-        {/* TODO type this */}
         {skills.map((skill) => (
-          <Skill
-            dangerouslySetInnerHTML={{
-              __html: simpleIcons.Get(skill.icon).svg,
-            }}
-            key={skill.id}
-          />
+          <SkillBox key={skill.id}>
+            <SkillIconContainer
+              dangerouslySetInnerHTML={{
+                __html: simpleIcons.Get(skill.icon).svg,
+              }}
+            />
+            <small>{skill.name}</small>
+          </SkillBox>
         ))}
       </SkillsContainer>
     </View>
