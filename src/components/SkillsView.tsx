@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { useStaticQuery, graphql } from 'gatsby';
 import View from './View';
 import simpleIcons from 'simple-icons';
 
@@ -14,14 +15,33 @@ const Skill = styled.div`
 `;
 
 const SkillsView = () => {
-  const icon = simpleIcons.Get('typescript');
-  console.log('icon', icon);
+  // TODO type this
+  const data = useStaticQuery(graphql`
+    {
+      allSkillsYaml {
+        nodes {
+          icon
+          name
+          id
+        }
+      }
+    }
+  `);
+
+  const skills = data.allSkillsYaml.nodes;
 
   return (
     <View>
       <h2>Skills</h2>
       <SkillsContainer>
-        <Skill dangerouslySetInnerHTML={{ __html: icon.svg }}></Skill>
+        {/* TODO type this */}
+        {skills.map((skill) => (
+          <Skill
+            dangerouslySetInnerHTML={{
+              __html: simpleIcons.Get(skill.icon).svg,
+            }}
+          />
+        ))}
       </SkillsContainer>
     </View>
   );
