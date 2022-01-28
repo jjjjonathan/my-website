@@ -15,6 +15,7 @@ module.exports = {
       },
     },
     'gatsby-transformer-remark',
+    'gatsby-transformer-yaml',
     'gatsby-plugin-sharp',
     'gatsby-transformer-sharp',
     {
@@ -45,6 +46,12 @@ module.exports = {
       options: {
         name: 'bio',
         path: './src/content/bio.md',
+      },
+    },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        path: `./src/content/skills.yaml`,
       },
     },
   ],
