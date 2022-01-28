@@ -9,9 +9,8 @@ const SkillsContainer = styled.div`
 `;
 
 const Skill = styled.div`
-  color: ${({ theme }) => theme.colors.light};
-  width: 200px;
-  height: 200px;
+  fill: ${({ theme }) => theme.colors.light};
+  width: 30px;
 `;
 
 const SkillsView = () => {
@@ -40,6 +39,7 @@ const SkillsView = () => {
             dangerouslySetInnerHTML={{
               __html: simpleIcons.Get(skill.icon).svg,
             }}
+            key={skill.id}
           />
         ))}
       </SkillsContainer>
