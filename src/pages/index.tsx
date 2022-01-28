@@ -7,6 +7,7 @@ import { graphql } from 'gatsby';
 import styled from 'styled-components';
 import LandingView from '../components/LandingView';
 import SkillsView from '../components/SkillsView';
+import { FiDownload } from 'react-icons/fi';
 
 type Props = {
   data: {
@@ -42,10 +43,15 @@ const IndexPage = ({ data }: Props) => {
         ))}
         <SkillsView />
         <View>
-          <h2>Resume</h2>
+          <h2>
+            Resume <FiDownload />
+          </h2>
         </View>
         <View>
           <h2>Contact</h2>
+          <h3>email</h3>
+          <h3>github</h3>
+          <h3>linkedin</h3>
         </View>
         <Footer>&copy; Copyright 2022 Jonathan Horn</Footer>
       </main>

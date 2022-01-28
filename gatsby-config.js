@@ -51,7 +51,7 @@ module.exports = {
     {
       resolve: 'gatsby-source-filesystem',
       options: {
-        path: `./src/content/skills.yaml`,
+        path: './src/content/skills.yaml',
       },
     },
   ],
