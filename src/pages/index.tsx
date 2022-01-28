@@ -1,13 +1,13 @@
 import React from 'react';
+import { graphql } from 'gatsby';
+import styled from 'styled-components';
+import { FiDownload } from 'react-icons/fi';
 import type { Project, Bio } from '../types/content';
 import Layout from '../components/Layout';
 import View from '../components/View';
 import ProjectView from '../components/ProjectView';
-import { graphql } from 'gatsby';
-import styled from 'styled-components';
 import LandingView from '../components/LandingView';
 import SkillsView from '../components/SkillsView';
-import { FiDownload } from 'react-icons/fi';
 
 type Props = {
   data: {
@@ -19,6 +19,10 @@ type Props = {
     };
   };
 };
+
+const BioDiv = styled.div`
+  margin: 10px;
+`;
 
 const Footer = styled.div`
   color: ${({ theme }) => theme.colors.dark};
@@ -36,7 +40,7 @@ const IndexPage = ({ data }: Props) => {
       <main>
         <LandingView />
         <View>
-          <div dangerouslySetInnerHTML={{ __html: bio }}></div>
+          <BioDiv dangerouslySetInnerHTML={{ __html: bio }} />
         </View>
         {projects.map((project) => (
           <ProjectView project={project} key={project.frontmatter.index} />

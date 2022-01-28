@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { up } from 'styled-breakpoints';
 import { useStaticQuery, graphql } from 'gatsby';
 import View from './View';
 import simpleIcons from 'simple-icons';
@@ -8,7 +9,7 @@ import type { Skill } from '../types/content';
 const SkillsContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
-  width: 100%;
+  justify-content: center;
 `;
 
 const SkillBox = styled.div`
@@ -16,19 +17,37 @@ const SkillBox = styled.div`
   flex-direction: column;
   align-items: center;
   width: 18vw;
-  margin-bottom: 10px;
+  margin-bottom: 25px;
+
+  ${up('sm')} {
+    width: 100px;
+  }
+
+  ${up('md')} {
+    margin-bottom: 35px;
+  }
 `;
 
-const SkillIconContainer = styled.div`
+const IconContainer = styled.div`
   svg {
     fill: ${({ theme }) => theme.colors.light};
     width: 12vw;
     height: 12vw;
+
+    ${up('sm')} {
+      width: 60px;
+      height: 60px;
+    }
   }
 `;
 
-const DescriptionBox = styled.div`
-  width: 18vw;
+const IconName = styled.div`
+  text-align: center;
+  font-size: 3vw;
+
+  ${up('sm')} {
+    font-size: 1rem;
+  }
 `;
 
 const SkillsView = () => {
@@ -52,12 +71,12 @@ const SkillsView = () => {
       <SkillsContainer>
         {skills.map((skill) => (
           <SkillBox key={skill.id}>
-            <SkillIconContainer
+            <IconContainer
               dangerouslySetInnerHTML={{
                 __html: simpleIcons.Get(skill.icon).svg,
               }}
             />
-            <small>{skill.name}</small>
+            <IconName>{skill.name}</IconName>
           </SkillBox>
         ))}
       </SkillsContainer>

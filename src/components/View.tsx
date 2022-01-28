@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { up } from 'styled-breakpoints';
 
 type Props = {
   children: React.ReactNode;
@@ -7,13 +8,14 @@ type Props = {
 
 const Container = styled.div`
   width: 100vw;
-  height: 100vh;
+  min-height: 100vh;
   padding: 20px;
 `;
 
 const Box = styled.div`
   width: 100%;
   height: 100%;
+  min-height: calc(100vh - 40px);
   padding: 25px;
   border-radius: 25px;
   background-color: ${({ theme }) => theme.colors.dark};
@@ -21,6 +23,14 @@ const Box = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+
+  ${up('sm')} {
+    padding: 60px;
+  }
+
+  ${up('md')} {
+    padding: 100px;
+  }
 `;
 
 const View = ({ children }: Props) => {
