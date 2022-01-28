@@ -6,6 +6,15 @@ import View from './View';
 import simpleIcons from 'simple-icons';
 import type { Skill } from '../types/content';
 
+const Title = styled.div`
+  text-align: center;
+  margin-bottom: 40px;
+
+  ${up('md')} {
+    margin-bottom: 60px;
+  }
+`;
+
 const SkillsContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
@@ -67,7 +76,9 @@ const SkillsView = () => {
 
   return (
     <View>
-      <h2>Skills</h2>
+      <Title>
+        <h2>Skills</h2>
+      </Title>
       <SkillsContainer>
         {skills.map((skill) => (
           <SkillBox key={skill.id}>
