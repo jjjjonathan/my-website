@@ -1,9 +1,10 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 import styled from 'styled-components';
-import { FiDownload } from 'react-icons/fi';
+import { FiDownload, FiArrowUpRight } from 'react-icons/fi';
 import type { Project, Bio } from '../types/content';
 import Layout from '../components/Layout';
+import Link from '../components/Link';
 import View from '../components/View';
 import ProjectView from '../components/ProjectView';
 import LandingView from '../components/LandingView';
@@ -48,14 +49,29 @@ const IndexPage = ({ data }: Props) => {
         <SkillsView />
         <View>
           <h2>
-            Resume <FiDownload />
+            {/* TODO change link */}
+            <Link href="https://google.com">
+              Resume <FiDownload />
+            </Link>
           </h2>
         </View>
         <View>
           <h2>Contact</h2>
-          <h3>email</h3>
-          <h3>github</h3>
-          <h3>linkedin</h3>
+          <h3>
+            <Link href="mailto:jonathanhorn000@gmail.com" noTargetBlank>
+              email <FiArrowUpRight />
+            </Link>
+          </h3>
+          <h3>
+            <Link href="https://github.com/jjjjonathan">
+              github <FiArrowUpRight />
+            </Link>
+          </h3>
+          <h3>
+            <Link href="https://www.linkedin.com/in/jjjjonathan/">
+              linkedin <FiArrowUpRight />
+            </Link>
+          </h3>
         </View>
         <Footer>&copy; Copyright 2022 Jonathan Horn</Footer>
       </main>

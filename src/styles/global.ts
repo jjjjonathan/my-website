@@ -65,6 +65,10 @@ const GlobalStyle = createGlobalStyle`
     font-size: 0.7rem;
   }
 
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
 `;
 
 export default GlobalStyle;

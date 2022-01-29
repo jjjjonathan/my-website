@@ -2,20 +2,30 @@ import React from 'react';
 import styled from 'styled-components';
 
 type Props = {
-  children: React.ReactChild;
+  children: React.ReactNode;
   href: string;
+  variant?: 'mini';
+  noTargetBlank?: boolean;
 };
 
-const StyledA = styled.a`
+const MiniA = styled.a`
   font-variant-caps: all-small-caps;
   font-weight: 600;
-  color: ${({ theme }) => theme.colors.light};
 `;
 
-const Link = ({ children, href }: Props) => (
-  <StyledA href={href} target="_blank">
-    {children}
-  </StyledA>
-);
+const Link = ({ children, href, variant, noTargetBlank }: Props) => {
+  if (variant === 'mini')
+    return (
+      <MiniA href={href} target={noTargetBlank ? undefined : '_blank'}>
+        {children}
+      </MiniA>
+    );
+
+  return (
+    <a href={href} target={noTargetBlank ? undefined : '_blank'}>
+      {children}
+    </a>
+  );
+};
 
 export default Link;

@@ -77,8 +77,12 @@ const ProjectView = ({ project }: Props) => {
         <Content>
           <Title>{title}</Title>
           <div dangerouslySetInnerHTML={{ __html: html }} />
-          <Link href={github}>Github</Link>
-          <Link href={live}>Live Preview</Link>
+          <Link variant="mini" href={github}>
+            Github
+          </Link>
+          <Link variant="mini" href={live}>
+            Live Preview
+          </Link>
         </Content>
         <Image>
           <Link href={live}>
