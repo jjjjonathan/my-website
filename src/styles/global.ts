@@ -18,6 +18,7 @@ const GlobalStyle = createGlobalStyle`
     background: ${({ theme }) => theme.colors.light};
     color: ${({ theme }) => theme.colors.light};
     font-family: 'Jost', sans-serif;
+    font-weight: 400;
     line-height: 1.75;
   }
 
@@ -47,6 +48,7 @@ const GlobalStyle = createGlobalStyle`
 
   h2 {
     font-size: 3rem;
+    font-weight: 200;
 
     ${up('md')} {
       font-size: 5rem;
@@ -72,6 +74,11 @@ const GlobalStyle = createGlobalStyle`
     &:hover {
       color: ${({ theme }) => theme.colors.accent}
     }
+  }
+
+  ::selection {
+    background-color: ${({ theme }) => theme.colors.accent};
+    color: ${({ theme }) => theme.colors.dark};
   }
 `;
 
