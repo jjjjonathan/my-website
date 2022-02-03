@@ -15,6 +15,7 @@
     "deploy": "gatsby build && git subtree push --prefix public https://github.com/jjjjonathan/jjjjonathan.github.io.git main"
   },
   "dependencies": {
+    "@fontsource/jost": "^4.5.2",
     "babel-plugin-styled-components": "^2.0.2",
     "gatsby": "^4.4.0",
     "gatsby-plugin-image": "^2.4.0",
