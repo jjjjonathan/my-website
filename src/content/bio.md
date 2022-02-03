@@ -1,1 +1,3 @@
-I'm a self-taught web developer focusing on the front end, most specifically React. I've been studying web dev and building projects for about a year, and I've coded my way through the curriculum of both The Odin Project and Full Stack Open.
+I'm a self-taught web developer based in Los Angeles. I love building new things, problem-solving, and bringing good design to life.
+
+Keep scrolling to check out some of my projects!

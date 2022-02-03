@@ -48,10 +48,18 @@ const Title = styled.h3`
   transform: rotate(${() => Math.random() * 6 - 3}deg);
 `;
 
+const Description = styled.div`
+  transform: rotate(${() => Math.random() * 4 - 2}deg);
+`;
+
+const Links = styled.div`
+  transform: rotate(${() => Math.random() * 4 - 2}deg);
+`;
+
 const Image = styled.div`
   img {
     width: 300px;
-    border-radius: 3px;
+    border-radius: 12px;
 
     ${up('sm')} {
       width: 400px;
@@ -76,13 +84,17 @@ const ProjectView = ({ project }: Props) => {
       <Container>
         <Content>
           <Title>{title}</Title>
-          <div dangerouslySetInnerHTML={{ __html: html }} />
-          <Link variant="mini" href={github}>
-            Github
-          </Link>
-          <Link variant="mini" href={live}>
-            Live Preview
-          </Link>
+          <Description>
+            <div dangerouslySetInnerHTML={{ __html: html }} />
+          </Description>
+          <Links>
+            <Link variant="mini" href={github}>
+              Github
+            </Link>
+            <Link variant="mini" href={live}>
+              Live Preview
+            </Link>
+          </Links>
         </Content>
         <Image>
           <Link href={live}>

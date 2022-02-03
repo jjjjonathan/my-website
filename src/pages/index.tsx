@@ -25,7 +25,7 @@ const BioDiv = styled.div`
   margin: 10px;
 `;
 
-const Footer = styled.div`
+const Footer = styled.footer`
   color: ${({ theme }) => theme.colors.dark};
   margin-top: 50px;
   margin-bottom: 50px;
@@ -73,8 +73,8 @@ const IndexPage = ({ data }: Props) => {
             </Link>
           </h3>
         </View>
-        <Footer>&copy; Copyright 2022 Jonathan Horn</Footer>
       </main>
+      <Footer>&copy; Copyright 2022 Jonathan Horn</Footer>
     </Layout>
   );
 };
