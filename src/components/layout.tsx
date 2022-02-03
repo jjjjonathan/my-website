@@ -2,6 +2,7 @@ import React from 'react';
 import styled, { ThemeProvider } from 'styled-components';
 import { theme, GlobalStyle } from '../styles';
 import { Helmet } from 'react-helmet';
+import { up } from 'styled-breakpoints';
 
 type Props = {
   children: React.ReactNode;
@@ -10,8 +11,13 @@ type Props = {
 const Footer = styled.footer`
   color: ${({ theme }) => theme.colors.dark};
   margin-top: 50px;
-  margin-bottom: 50px;
+  margin-bottom: 70px;
   text-align: center;
+  font-size: 0.8rem;
+
+  ${up('sm')} {
+    font-size: 1rem;
+  }
 `;
 
 const Layout = ({ children }: Props) => {
