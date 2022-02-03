@@ -48,7 +48,6 @@ const GlobalStyle = createGlobalStyle`
 
   h2 {
     font-size: 3rem;
-    font-weight: 200;
 
     ${up('md')} {
       font-size: 5rem;
