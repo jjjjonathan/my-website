@@ -1,11 +1,18 @@
 import React from 'react';
-import { ThemeProvider } from 'styled-components';
+import styled, { ThemeProvider } from 'styled-components';
 import { theme, GlobalStyle } from '../styles';
 import { Helmet } from 'react-helmet';
 
 type Props = {
   children: React.ReactNode;
 };
+
+const Footer = styled.footer`
+  color: ${({ theme }) => theme.colors.dark};
+  margin-top: 50px;
+  margin-bottom: 50px;
+  text-align: center;
+`;
 
 const Layout = ({ children }: Props) => {
   return (
@@ -25,6 +32,7 @@ const Layout = ({ children }: Props) => {
       </Helmet>
       <GlobalStyle />
       {children}
+      <Footer>&copy; Copyright 2022 Jonathan Horn</Footer>
     </ThemeProvider>
   );
 };

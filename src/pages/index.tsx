@@ -26,13 +26,6 @@ const BioDiv = styled.div`
   margin: 10px;
 `;
 
-const Footer = styled.footer`
-  color: ${({ theme }) => theme.colors.dark};
-  margin-top: 50px;
-  margin-bottom: 50px;
-  text-align: center;
-`;
-
 const IndexPage = ({ data }: Props) => {
   const projects = data.projects.nodes;
   const bio = data.bio.nodes[0].html;
@@ -50,7 +43,6 @@ const IndexPage = ({ data }: Props) => {
         <SkillsView />
         <View>
           <h2>
-            {/* TODO change link */}
             <Link href={resume} noUnderline>
               Resume <FiDownload />
             </Link>
@@ -79,7 +71,6 @@ const IndexPage = ({ data }: Props) => {
           </h3>
         </View>
       </main>
-      <Footer>&copy; Copyright 2022 Jonathan Horn</Footer>
     </Layout>
   );
 };
