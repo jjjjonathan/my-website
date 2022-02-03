@@ -1,5 +1,3 @@
-import theme from './src/styles/theme';
-
 module.exports = {
   siteMetadata: {
     siteUrl: 'https://jjjjonathan.github.io',
@@ -18,8 +16,8 @@ module.exports = {
         lang: 'en',
         start_url: '/',
         icon: 'src/images/icon.png',
-        background_color: theme.colors.light,
-        theme_color: theme.colors.dark,
+        background_color: '#F0F7F4',
+        theme_color: '#0D1F2D',
       },
     },
     'gatsby-transformer-remark',
