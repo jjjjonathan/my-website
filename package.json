@@ -11,7 +11,8 @@
     "start": "gatsby develop",
     "build": "gatsby build",
     "serve": "gatsby serve",
-    "clean": "gatsby clean"
+    "clean": "gatsby clean",
+    "deploy": "gatsby build && git subtree push --prefix public https://github.com/jjjjonathan/jjjjonathan.github.io.git main"
   },
   "dependencies": {
     "babel-plugin-styled-components": "^2.0.2",
