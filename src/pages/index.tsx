@@ -9,6 +9,7 @@ import View from '../components/View';
 import ProjectView from '../components/ProjectView';
 import LandingView from '../components/LandingView';
 import SkillsView from '../components/SkillsView';
+import resume from '../static/JonathanHornResume.pdf';
 
 type Props = {
   data: {
@@ -50,7 +51,7 @@ const IndexPage = ({ data }: Props) => {
         <View>
           <h2>
             {/* TODO change link */}
-            <Link href="https://google.com">
+            <Link href={resume}>
               Resume <FiDownload />
             </Link>
           </h2>
