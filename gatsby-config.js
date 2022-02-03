@@ -1,3 +1,5 @@
+import theme from './src/styles/theme';
+
 module.exports = {
   siteMetadata: {
     siteUrl: 'https://jjjjonathan.github.io',
@@ -11,7 +13,13 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
+        name: 'Jonathan Horn',
+        description: 'Jonathan Horn is a Full Stack Web Developer',
+        lang: 'en',
+        start_url: '/',
         icon: 'src/images/icon.png',
+        background_color: theme.colors.light,
+        theme_color: theme.colors.dark,
       },
     },
     'gatsby-transformer-remark',
