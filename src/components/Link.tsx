@@ -6,15 +6,25 @@ type Props = {
   href: string;
   variant?: 'mini';
   noTargetBlank?: boolean;
+  noUnderline?: boolean;
 };
 
 const MiniA = styled.a`
   font-variant-caps: all-small-caps;
   font-weight: 600;
-  text-decoration: underline;
 `;
 
-const Link = ({ children, href, variant, noTargetBlank }: Props) => {
+const StyledA = styled.a<{ noUnderline?: boolean }>`
+  ${({ noUnderline }) => noUnderline && 'text-decoration: none;'}
+`;
+
+const Link = ({
+  children,
+  href,
+  variant,
+  noTargetBlank,
+  noUnderline,
+}: Props) => {
   if (variant === 'mini')
     return (
       <MiniA href={href} target={noTargetBlank ? undefined : '_blank'}>
@@ -23,9 +33,13 @@ const Link = ({ children, href, variant, noTargetBlank }: Props) => {
     );
 
   return (
-    <a href={href} target={noTargetBlank ? undefined : '_blank'}>
+    <StyledA
+      href={href}
+      target={noTargetBlank ? undefined : '_blank'}
+      noUnderline={noUnderline}
+    >
       {children}
-    </a>
+    </StyledA>
   );
 };
 

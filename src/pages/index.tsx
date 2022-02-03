@@ -51,7 +51,7 @@ const IndexPage = ({ data }: Props) => {
         <View>
           <h2>
             {/* TODO change link */}
-            <Link href={resume}>
+            <Link href={resume} noUnderline>
               Resume <FiDownload />
             </Link>
           </h2>
@@ -59,17 +59,21 @@ const IndexPage = ({ data }: Props) => {
         <View>
           <h2>Contact</h2>
           <h3>
-            <Link href="mailto:jonathanhorn000@gmail.com" noTargetBlank>
+            <Link
+              href="mailto:jonathanhorn000@gmail.com"
+              noTargetBlank
+              noUnderline
+            >
               email <FiArrowUpRight />
             </Link>
           </h3>
           <h3>
-            <Link href="https://github.com/jjjjonathan">
+            <Link href="https://github.com/jjjjonathan" noUnderline>
               github <FiArrowUpRight />
             </Link>
           </h3>
           <h3>
-            <Link href="https://www.linkedin.com/in/jjjjonathan/">
+            <Link href="https://www.linkedin.com/in/jjjjonathan/" noUnderline>
               linkedin <FiArrowUpRight />
             </Link>
           </h3>
