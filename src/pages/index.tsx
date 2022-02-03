@@ -1,6 +1,7 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 import styled from 'styled-components';
+import { up } from 'styled-breakpoints';
 import { FiDownload, FiArrowUpRight } from 'react-icons/fi';
 import type { Project, Bio } from '../types/content';
 import Layout from '../components/Layout';
@@ -24,6 +25,7 @@ type Props = {
 
 const BioDiv = styled.div`
   margin: 10px;
+  max-width: 800px;
 `;
 
 const IndexPage = ({ data }: Props) => {
