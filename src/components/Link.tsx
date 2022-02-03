@@ -11,6 +11,7 @@ type Props = {
 const MiniA = styled.a`
   font-variant-caps: all-small-caps;
   font-weight: 600;
+  text-decoration: underline;
 `;
 
 const Link = ({ children, href, variant, noTargetBlank }: Props) => {
