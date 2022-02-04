@@ -12,7 +12,7 @@
     "build": "gatsby build",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
-    "deploy": "gatsby build && git subtree push --prefix public https://github.com/jjjjonathan/jjjjonathan.github.io.git main"
+    "deploy": "gatsby build && gh-pages -d public -r https://github.com/jjjjonathan/jjjjonathan.github.io.git -b main"
   },
   "dependencies": {
     "@fontsource/jost": "^4.5.2",
@@ -40,6 +40,7 @@
   "devDependencies": {
     "@types/react-helmet": "^6.1.5",
     "@types/styled-components": "^5.1.19",
-    "@types/webpack-env": "^1.16.3"
+    "@types/webpack-env": "^1.16.3",
+    "gh-pages": "^3.2.3"
   }
 }
