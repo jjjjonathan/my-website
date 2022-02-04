@@ -60,5 +60,11 @@ module.exports = {
         path: './src/content/skills.yaml',
       },
     },
+    {
+      resolve: 'gatsby-plugin-google-gtag',
+      options: {
+        trackingIds: ['G-L4LV1CGWSH'],
+      },
+    },
   ],
 };
