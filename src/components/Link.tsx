@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { motion } from 'framer-motion';
 
 type Props = {
   children: React.ReactNode;
@@ -28,14 +29,19 @@ const Link = ({
   noUnderline,
 }: Props) => {
   return (
-    <StyledA
-      href={href}
-      target={noTargetBlank ? undefined : '_blank'}
-      noUnderline={noUnderline}
-      mini={variant === 'mini'}
+    <motion.div
+      whileHover={{ scale: 1.2 }}
+      style={{ width: 'fit-content', height: 'fit-content' }}
     >
-      {children}
-    </StyledA>
+      <StyledA
+        href={href}
+        target={noTargetBlank ? undefined : '_blank'}
+        noUnderline={noUnderline}
+        mini={variant === 'mini'}
+      >
+        {children}
+      </StyledA>
+    </motion.div>
   );
 };
 
