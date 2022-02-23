@@ -53,7 +53,10 @@ const View = ({ children }: Props) => {
 
   const variants = {
     straight: { rotate: 0 },
-    rotate: { rotate: getRotation(), transition: { delay: 0.2 } },
+    rotate: {
+      rotate: getRotation(),
+      transition: { delay: 0.2, type: 'spring', bounce: 0.75 },
+    },
   };
 
   return (
