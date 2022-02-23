@@ -53,7 +53,12 @@ const Description = styled.div`
 `;
 
 const Links = styled.div`
+  display: flex;
   transform: rotate(${() => Math.random() * 4 - 2}deg);
+
+  div {
+    margin-right: 10px;
+  }
 `;
 
 const Image = styled.div`
