@@ -9,3 +9,4 @@ Live at: https://jjjjonathan.github.io
 - React
 - Gatsby
 - styled-components
+- Framer Motion
