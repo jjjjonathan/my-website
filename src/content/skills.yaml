@@ -18,13 +18,19 @@
   icon: bootstrap
 - name: Sass
   icon: sass
-- name: MongoDB
-  icon: mongodb
-- name: Webpack
-  icon: webpack
-- name: Cypress
-  icon: cypress
 - name: Gatsby
   icon: gatsby
+- name: MongoDB
+  icon: mongodb
+- name: PostgreSQL
+  icon: postgresql
+- name: GraphQL
+  icon: graphql
+- name: Cypress
+  icon: cypress
+- name: Git
+  icon: git
+- name: Webpack
+  icon: webpack
 - name: Styled Components
   icon: styledcomponents
