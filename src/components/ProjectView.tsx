@@ -23,18 +23,23 @@ const Container = styled.div`
 `;
 
 const Content = styled.div`
-  margin-bottom: 30px;
+  margin-bottom: 40px;
   display: flex;
   flex-direction: column;
   align-items: center;
 
+  ${up('sm')} {
+    margin-bottom: 50px;
+  }
+
   ${up('lg')} {
-    margin-left: 25px;
+    margin-bottom: 20px;
+    margin-left: 50px;
     align-items: flex-start;
   }
 
   ${up('xl')} {
-    margin-left: 35px;
+    margin-left: 65px;
   }
 
   h3 {
