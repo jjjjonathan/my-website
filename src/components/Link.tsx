@@ -31,6 +31,7 @@ const Link = ({
   return (
     <motion.div
       whileHover={{ scale: 1.2 }}
+      whileTap={{ scale: 0.8 }}
       style={{ width: 'fit-content', height: 'fit-content' }}
     >
       <StyledA
