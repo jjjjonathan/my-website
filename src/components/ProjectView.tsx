@@ -24,11 +24,13 @@ const Container = styled.div`
 
 const Content = styled.div`
   margin-bottom: 30px;
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
   ${up('lg')} {
-    text-align: left;
     margin-left: 25px;
+    align-items: flex-start;
   }
 
   ${up('xl')} {
@@ -38,10 +40,6 @@ const Content = styled.div`
   h3 {
     margin-top: 0;
   }
-
-  a {
-    margin-right: 10px;
-  }
 `;
 
 const Title = styled.h3`
@@ -49,6 +47,7 @@ const Title = styled.h3`
 `;
 
 const Description = styled.div`
+  text-align: center;
   transform: rotate(${() => Math.random() * 4 - 2}deg);
 `;
 
@@ -57,7 +56,11 @@ const Links = styled.div`
   transform: rotate(${() => Math.random() * 4 - 2}deg);
 
   div {
-    margin-right: 10px;
+    margin-right: 20px;
+  }
+
+  div:last-child {
+    margin-right: 0;
   }
 `;
 
