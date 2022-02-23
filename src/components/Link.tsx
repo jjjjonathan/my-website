@@ -9,13 +9,15 @@ type Props = {
   noUnderline?: boolean;
 };
 
-const MiniA = styled.a`
-  font-variant-caps: all-small-caps;
-  font-weight: 600;
-`;
-
-const StyledA = styled.a<{ noUnderline?: boolean }>`
+const StyledA = styled.a<{ noUnderline?: boolean; mini?: boolean }>`
   ${({ noUnderline }) => noUnderline && 'text-decoration: none;'}
+
+  ${({ mini }) =>
+    mini &&
+    `
+    font-variant-caps: all-small-caps;
+    font-weight: 600;
+  `}
 `;
 
 const Link = ({
@@ -25,18 +27,12 @@ const Link = ({
   noTargetBlank,
   noUnderline,
 }: Props) => {
-  if (variant === 'mini')
-    return (
-      <MiniA href={href} target={noTargetBlank ? undefined : '_blank'}>
-        {children}
-      </MiniA>
-    );
-
   return (
     <StyledA
       href={href}
       target={noTargetBlank ? undefined : '_blank'}
       noUnderline={noUnderline}
+      mini={variant === 'mini'}
     >
       {children}
     </StyledA>
