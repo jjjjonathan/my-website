@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import styled from 'styled-components';
 import { up } from 'styled-breakpoints';
 import { motion, useAnimation } from 'framer-motion';
@@ -11,6 +11,7 @@ type Props = {
 const Container = styled.div`
   width: 100vw;
   min-height: 100vh;
+  padding: 20px;
 `;
 
 const Box = styled(motion.div)`
@@ -18,6 +19,7 @@ const Box = styled(motion.div)`
   height: 100%;
   min-height: 100vh;
   padding: 35px;
+  border-radius: 30px;
   background-color: ${({ theme }) => theme.colors.dark};
   display: flex;
   align-items: center;
@@ -25,24 +27,26 @@ const Box = styled(motion.div)`
 
   ${up('sm')} {
     padding: 60px;
+    border-radius: 35px;
   }
 
   ${up('md')} {
     padding: 100px;
+    border-radius: 40px;
   }
 `;
 
 const View = ({ children }: Props) => {
   const boxControls = useAnimation();
-  const { ref, inView } = useInView({ threshold: 0.75 });
-  const [isRotated, setIsRotated] = useState(false);
+  const { ref, inView } = useInView({ threshold: 0.5 });
 
   useEffect(() => {
-    if (inView && !isRotated) {
-      boxControls.start('rotate');
-      setIsRotated(true);
+    if (inView) {
+      boxControls.start('pop');
+    } else {
+      boxControls.start('fill');
     }
-  }, [boxControls, inView, isRotated]);
+  }, [boxControls, inView]);
 
   const getRotation = () => {
     const range = Math.random() + 1.5;
@@ -50,11 +54,13 @@ const View = ({ children }: Props) => {
   };
 
   const boxVariants = {
-    straight: { rotate: 0 },
-    rotate: {
+    fill: {
+      rotate: 0,
+      scale: 1,
+    },
+    pop: {
       rotate: getRotation(),
       scale: 0.95,
-      borderRadius: '25px',
       transition: { delay: 0.2, type: 'spring', bounce: 0.75 },
     },
   };
@@ -64,7 +70,7 @@ const View = ({ children }: Props) => {
       <Box
         ref={ref}
         variants={boxVariants}
-        initial="straight"
+        initial="fill"
         animate={boxControls}
       >
         <div>{children}</div>
