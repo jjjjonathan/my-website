@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { up } from 'styled-breakpoints';
 import { motion, useAnimation } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
+import getRotation from '../utils/get-rotation';
 
 type Props = {
   children: React.ReactNode;
@@ -48,18 +49,13 @@ const View = ({ children }: Props) => {
     }
   }, [boxControls, inView]);
 
-  const getRotation = () => {
-    const range = Math.random() + 1.5;
-    return Math.random() >= 0.5 ? range : -range;
-  };
-
   const boxVariants = {
     fill: {
       rotate: 0,
       scale: 1,
     },
     pop: {
-      rotate: getRotation(),
+      rotate: getRotation(1, 1.5),
       scale: 0.95,
       transition: { delay: 0.2, type: 'spring', bounce: 0.75 },
     },
