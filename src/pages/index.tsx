@@ -10,6 +10,7 @@ import ProjectView from '../components/ProjectView';
 import LandingView from '../components/LandingView';
 import SkillsView from '../components/SkillsView';
 import resume from '../static/JonathanHornResume.pdf';
+import OffKilter from '../components/OffKilter';
 
 type Props = {
   data: {
@@ -21,6 +22,10 @@ type Props = {
     };
   };
 };
+
+const BioTitle = styled(OffKilter)`
+  width: fit-content;
+`;
 
 const BioDiv = styled.div`
   margin: 10px;
@@ -38,6 +43,7 @@ const IndexPage = ({ data }: Props) => {
       </header>
       <main>
         <View>
+          <BioTitle asEl="h2">about</BioTitle>
           <BioDiv dangerouslySetInnerHTML={{ __html: bio }} />
         </View>
         {projects.map((project) => (

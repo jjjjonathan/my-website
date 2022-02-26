@@ -5,6 +5,7 @@ import { useStaticQuery, graphql } from 'gatsby';
 import View from './View';
 import simpleIcons from 'simple-icons';
 import type { Skill } from '../types/content';
+import OffKilter from './OffKilter';
 
 const Title = styled.div`
   text-align: center;
@@ -77,7 +78,7 @@ const SkillsView = () => {
   return (
     <View>
       <Title>
-        <h2>Skills</h2>
+        <OffKilter asEl="h2">Skills</OffKilter>
       </Title>
       <SkillsContainer>
         {skills.map((skill) => (
