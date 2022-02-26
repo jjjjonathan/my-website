@@ -33,8 +33,10 @@ const IndexPage = ({ data }: Props) => {
 
   return (
     <Layout>
-      <main>
+      <header>
         <LandingView />
+      </header>
+      <main>
         <View>
           <BioDiv dangerouslySetInnerHTML={{ __html: bio }} />
         </View>
