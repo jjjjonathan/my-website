@@ -18,7 +18,8 @@ const Container = styled.div`
 const Box = styled(motion.div)`
   width: 100%;
   height: 100%;
-  min-height: 100vh;
+  /* min-height must include Container padding */
+  min-height: calc(100vh - 40px);
   padding: 35px;
   border-radius: 30px;
   background-color: ${({ theme }) => theme.colors.dark};
@@ -43,21 +44,27 @@ const View = ({ children }: Props) => {
 
   useEffect(() => {
     if (inView) {
-      boxControls.start('pop');
+      boxControls.start('offKilter');
     } else {
-      boxControls.start('fill');
+      boxControls.start('normal');
     }
   }, [boxControls, inView]);
 
   const boxVariants = {
-    fill: {
+    normal: {
       rotate: 0,
       scale: 1,
     },
-    pop: {
+    offKilter: {
       rotate: getRotation(1, 1.5),
       scale: 0.95,
-      transition: { delay: 0.2, type: 'spring', bounce: 0.75 },
+      transition: {
+        delay: 0.2,
+        type: 'spring',
+        bounce: 0.75,
+        delayChildren: 0.5,
+        staggerChildren: 0.3,
+      },
     },
   };
 
@@ -66,7 +73,7 @@ const View = ({ children }: Props) => {
       <Box
         ref={ref}
         variants={boxVariants}
-        initial="fill"
+        initial="normal"
         animate={boxControls}
       >
         <div>{children}</div>
