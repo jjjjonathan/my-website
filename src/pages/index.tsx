@@ -58,8 +58,8 @@ const IndexPage = ({ data }: Props) => {
           </h2>
         </View>
         <View>
-          <h2>Contact</h2>
-          <h3>
+          <OffKilter asEl="h2">Contact</OffKilter>
+          <OffKilter asEl="h3">
             <Link
               href="mailto:jonathanhorn000@gmail.com"
               noTargetBlank
@@ -67,17 +67,17 @@ const IndexPage = ({ data }: Props) => {
             >
               email <FiArrowUpRight />
             </Link>
-          </h3>
-          <h3>
+          </OffKilter>
+          <OffKilter asEl="h3">
             <Link href="https://github.com/jjjjonathan" noUnderline>
               github <FiArrowUpRight />
             </Link>
-          </h3>
-          <h3>
+          </OffKilter>
+          <OffKilter asEl="h3">
             <Link href="https://www.linkedin.com/in/jjjjonathan/" noUnderline>
               linkedin <FiArrowUpRight />
             </Link>
-          </h3>
+          </OffKilter>
         </View>
       </main>
     </Layout>
