@@ -31,6 +31,7 @@ const GlobalStyle = createGlobalStyle`
     font-family: 'Jost', sans-serif;
     line-height: 1.3;
     font-weight: 800;
+    text-align: center;
   }
 
   h1 {
