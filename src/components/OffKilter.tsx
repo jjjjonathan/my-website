@@ -3,11 +3,13 @@ import { motion } from 'framer-motion';
 import getRotation from '../utils/get-rotation';
 
 type Props = {
-  asEl: string | React.ComponentType;
+  asEl?: string | React.ComponentType;
   children?: React.ReactNode;
 };
 
 const OffKilter = ({ asEl, children, ...props }: Props) => {
+  const element = asEl || 'div';
+
   const variants = {
     normal: {
       rotate: 0,
@@ -21,7 +23,7 @@ const OffKilter = ({ asEl, children, ...props }: Props) => {
     },
   };
 
-  const Motion = motion<{ children?: React.ReactNode }>(asEl);
+  const Motion = motion<{ children?: React.ReactNode }>(element);
 
   return (
     <Motion variants={variants} {...props}>
