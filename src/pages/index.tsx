@@ -44,7 +44,9 @@ const IndexPage = ({ data }: Props) => {
       <main>
         <View>
           <BioTitle asEl="h2">about</BioTitle>
-          <BioDiv dangerouslySetInnerHTML={{ __html: bio }} />
+          <OffKilter>
+            <BioDiv dangerouslySetInnerHTML={{ __html: bio }} />
+          </OffKilter>
         </View>
         {projects.map((project) => (
           <ProjectView project={project} key={project.frontmatter.index} />
