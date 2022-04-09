@@ -75,11 +75,11 @@ const IndexPage = ({ data }: Props) => {
               github <FiArrowUpRight />
             </Link>
           </OffKilter>
-          <OffKilter asEl="h3">
+          {/* <OffKilter asEl="h3">
             <Link href="https://www.linkedin.com/in/jjjjonathan/" noUnderline>
               linkedin <FiArrowUpRight />
             </Link>
-          </OffKilter>
+          </OffKilter> */}
         </View>
       </main>
     </Layout>
