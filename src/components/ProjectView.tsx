@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import { up } from 'styled-breakpoints';
 import View from './View';
 import Link from './Link';
+import OffKilter from './OffKilter';
 
 // Will load all gifs in the following folder into ./gifs
 require.context('../images/projects');
@@ -47,15 +48,6 @@ const Content = styled.div`
   }
 `;
 
-const Title = styled.h3`
-  transform: rotate(${() => Math.random() * 6 - 3}deg);
-`;
-
-const Description = styled.div`
-  text-align: center;
-  transform: rotate(${() => Math.random() * 4 - 2}deg);
-`;
-
 const Links = styled.div`
   display: flex;
   transform: rotate(${() => Math.random() * 4 - 2}deg);
@@ -96,17 +88,21 @@ const ProjectView = ({ project }: Props) => {
     <View>
       <Container>
         <Content>
-          <Title>{title}</Title>
-          <Description>
+          <OffKilter asEl="h3">{title}</OffKilter>
+          <OffKilter asEl="div">
             <div dangerouslySetInnerHTML={{ __html: html }} />
-          </Description>
+          </OffKilter>
           <Links>
-            <Link variant="mini" href={github}>
-              Github
-            </Link>
-            <Link variant="mini" href={live}>
-              Live Preview
-            </Link>
+            <OffKilter asEl="div">
+              <Link variant="mini" href={github}>
+                Github
+              </Link>
+            </OffKilter>
+            <OffKilter asEl="div">
+              <Link variant="mini" href={live}>
+                Live Preview
+              </Link>
+            </OffKilter>
           </Links>
         </Content>
         <Image>

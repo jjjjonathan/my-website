@@ -10,6 +10,7 @@ import ProjectView from '../components/ProjectView';
 import LandingView from '../components/LandingView';
 import SkillsView from '../components/SkillsView';
 import resume from '../static/JonathanHornResume.pdf';
+import OffKilter from '../components/OffKilter';
 
 type Props = {
   data: {
@@ -22,6 +23,10 @@ type Props = {
   };
 };
 
+const BioTitle = styled(OffKilter)`
+  width: fit-content;
+`;
+
 const BioDiv = styled.div`
   margin: 10px;
   max-width: 800px;
@@ -33,10 +38,15 @@ const IndexPage = ({ data }: Props) => {
 
   return (
     <Layout>
-      <main>
+      <header>
         <LandingView />
+      </header>
+      <main>
         <View>
-          <BioDiv dangerouslySetInnerHTML={{ __html: bio }} />
+          <BioTitle asEl="h2">about</BioTitle>
+          <OffKilter>
+            <BioDiv dangerouslySetInnerHTML={{ __html: bio }} />
+          </OffKilter>
         </View>
         {projects.map((project) => (
           <ProjectView project={project} key={project.frontmatter.index} />
@@ -50,8 +60,8 @@ const IndexPage = ({ data }: Props) => {
           </h2>
         </View>
         <View>
-          <h2>Contact</h2>
-          <h3>
+          <OffKilter asEl="h2">Contact</OffKilter>
+          <OffKilter asEl="h3">
             <Link
               href="mailto:jonathanhorn000@gmail.com"
               noTargetBlank
@@ -59,17 +69,17 @@ const IndexPage = ({ data }: Props) => {
             >
               email <FiArrowUpRight />
             </Link>
-          </h3>
-          <h3>
+          </OffKilter>
+          <OffKilter asEl="h3">
             <Link href="https://github.com/jjjjonathan" noUnderline>
               github <FiArrowUpRight />
             </Link>
-          </h3>
-          <h3>
+          </OffKilter>
+          {/* <OffKilter asEl="h3">
             <Link href="https://www.linkedin.com/in/jjjjonathan/" noUnderline>
               linkedin <FiArrowUpRight />
             </Link>
-          </h3>
+          </OffKilter> */}
         </View>
       </main>
     </Layout>
