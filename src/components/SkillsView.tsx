@@ -22,7 +22,7 @@ const SkillsContainer = styled.div`
   justify-content: center;
 `;
 
-const SkillBox = styled.div`
+const SkillBox = styled(OffKilter)`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -76,13 +76,13 @@ const SkillsView = () => {
   const skills: Skill[] = data.allSkillsYaml.nodes;
 
   return (
-    <View>
+    <View speed="fast">
       <Title>
         <OffKilter asEl="h2">Skills</OffKilter>
       </Title>
       <SkillsContainer>
         {skills.map((skill) => (
-          <SkillBox key={skill.id}>
+          <SkillBox asEl="div" key={skill.id}>
             <IconContainer
               dangerouslySetInnerHTML={{
                 __html: simpleIcons.Get(skill.icon).svg,

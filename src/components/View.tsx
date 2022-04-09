@@ -7,6 +7,7 @@ import getRotation from '../utils/get-rotation';
 
 type Props = {
   children: React.ReactNode;
+  speed?: 'fast';
 };
 
 const Container = styled.div`
@@ -38,9 +39,11 @@ const Box = styled(motion.div)`
   }
 `;
 
-const View = ({ children }: Props) => {
+const View = ({ children, speed }: Props) => {
   const boxControls = useAnimation();
   const { ref, inView } = useInView({ threshold: 0.5 });
+
+  const staggerChildren = speed === 'fast' ? 0.1 : 0.3;
 
   useEffect(() => {
     if (inView) {
@@ -63,7 +66,7 @@ const View = ({ children }: Props) => {
         type: 'spring',
         bounce: 0.75,
         delayChildren: 0.5,
-        staggerChildren: 0.3,
+        staggerChildren,
       },
     },
   };
