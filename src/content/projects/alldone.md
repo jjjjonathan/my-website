@@ -1,5 +1,5 @@
 ---
-index: 3
+index: 2
 title: 'To-Do List'
 live: 'https://jjjjonathan.github.io/all-done/'
 github: 'https://github.com/jjjjonathan/all-done'

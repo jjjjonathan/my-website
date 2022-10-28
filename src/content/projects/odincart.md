@@ -1,5 +1,5 @@
 ---
-index: 4
+index: 3
 title: 'Shopping Cart'
 live: 'https://jjjjonathan.github.io/odin-cart/'
 github: 'https://github.com/jjjjonathan/odin-cart'
