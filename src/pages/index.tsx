@@ -52,13 +52,15 @@ const IndexPage = ({ data }: Props) => {
           <ProjectView project={project} key={project.frontmatter.index} />
         ))}
         <SkillsView />
-        <View>
+
+        {/* <View>
           <h2>
             <Link href={resume} noUnderline>
               Resume <FiDownload />
             </Link>
           </h2>
-        </View>
+        </View> */}
+
         <View>
           <OffKilter asEl="h2">Contact</OffKilter>
           <OffKilter asEl="h3">
